@@ -1,0 +1,17 @@
+module.exports = {
+  png: 'img',
+  jpg: 'img',
+  jpeg: 'img',
+  gif: 'img',
+  ico: 'img',
+  js: 'javascript',
+  css: 'css',
+  json: 'json',
+  md: 'markdown',
+  ttf: 'font',
+  woff: 'font',
+  woff2: 'font',
+  html: 'html',
+  file: 'file',
+  directory: 'directory',
+};

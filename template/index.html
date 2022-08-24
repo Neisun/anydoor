@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3605756_uc6ccjcf5x.css?spm=a313x.7781069.1998910419.78&file=font_3605756_uc6ccjcf5x.css">
+  <title>{{ title }}</title>
+  <style>
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      padding: 4px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+    li i {
+      margin-right: 3px;
+      color: rgb(255, 208, 0);
+      font-size: 30px !important;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    {{#each files}}
+      <li>
+        <i class="iconfont icon-{{this.type}}"></i><a href="{{../dir}}/{{this.name}}">{{this.name}}</a>
+      </li>
+    {{/each}}
+  </ul>
+</body>
+</html>
