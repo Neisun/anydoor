@@ -1,9 +1,11 @@
 {
   "name": "@neisun-node/anydoor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一个静态文件服务器",
   "main": "index.js",
-  "bin": "bin/anydoor.js",
+  "bin": {
+    "anydoor": "bin/anydoor.js"
+  },
   "scripts": {
     "prepare": "husky install && husky add .husky/pre-commit 'npx lint-staged'",
     "dev": "nodemon src/server.js"
