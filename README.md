@@ -1,28 +1,17 @@
 # anydoor
 
-#### 介绍
-一个用node实现的简单的静态资源服务器
+#### introduction
+A simple static resource server implemented in Node.
 
-#### 软件架构
-软件架构说明
+The directory where `anydoor` is currently executed serves as the root directory of the server.
+
+You can browse any file in the directory on the page
 
 
-#### 安装教程
+#### install
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+`npm install @neisun-node/anydoor -g`
+#### Usage
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+`anydoor -h 127.0.0.1 -p 8989` then server will started on '127.0.0.1:8989'
 
