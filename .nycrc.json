@@ -1,0 +1,10 @@
+{
+  "all": true,
+  "include": [
+    "config/**/*.js",
+    "src/**/*.js"
+  ],
+  "exclude": [
+    "**/*.spec.js"
+  ]
+}
