@@ -1,6 +1,6 @@
 {
   "name": "@neisun-node/anydoor",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A simple static resource server implemented in Node",
   "main": "index.js",
   "bin": {
