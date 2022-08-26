@@ -25,14 +25,11 @@ jobs:
           # 设置发包 npm 地址仓库
           registry-url: 'https://registry.npmjs.org'
       # 安装依赖
-      - name: Install dependencies
+      - name: Install dependencies 📦️
         run: npm ci
-
-      # 构建部分待添加
-
       # 执行部署
       - name: deploy
-      - run: npm publish
+        run: npm publish
         env:
           # 刚刚设置的 NPM_TOKEN
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
