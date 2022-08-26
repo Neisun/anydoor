@@ -1,31 +1,40 @@
 name: publish to npm
 
+# 触发工作流事件
 on:
   push:
     branches:
       - master
-  release:
-    types:
-      - created
 
-
+# 按顺序执行作业
 jobs:
-  build:
+  publish-gpr:
+    # 指定环境
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     node-versions: [12.x, 14.x, 16.x]
+    # 设置 node 版本
+    strategy:
+      matrix:
+        node-versions: [16.x]
     steps:
+      # 拉取 github 仓库代码
       - uses: actions/checkout@v3
-      # 设置.npmrc file to publish to npm
-        uses: actions/setup-node@v3
+      # 设置 node 环境
+      - uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: ${{ matrix.node-version }}
+          # 设置发包 npm 地址仓库
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      # - run: npm run test
+      # 安装依赖
+      - name: Install dependencies
+        run: npm ci
+
+      # 构建部分待添加
+
+      # 执行部署
+      - name: deploy
       - run: npm publish
         env:
+          # 刚刚设置的 NPM_TOKEN
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       
