@@ -1,24 +1,30 @@
-name: action example
+name: publish to npm
 
 on:
   push:
     branches:
       - master
+  release:
+    types:
+      - created
 
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-versions: [12.x, 14.x, 16.x]
+    # strategy:
+    #   matrix:
+    #     node-versions: [12.x, 14.x, 16.x]
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      # 设置.npmrc file to publish to npm
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm run test
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       
