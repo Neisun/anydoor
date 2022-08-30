@@ -27,6 +27,8 @@ jobs:
       # 安装依赖
       - name: Install dependencies 📦️
         run: npm ci
+      - name: 构建
+        run: npm run build
       # 执行部署
       - name: deploy
         run: npm publish --access public
